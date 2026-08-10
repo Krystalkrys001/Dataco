@@ -161,8 +161,8 @@ Documenting these openly rather than hiding them is part of the analysis, not a 
 
 ## Links
 
-- Medium article: ]
-- LinkedIn post: 
+- Medium article: https://medium.com/@ulasistanley1/from-180-000-orders-to-one-question-where-does-this-business-actually-bleed-money-f56c97b05ef3]
+- LinkedIn post: https://www.linkedin.com/posts/chukwuma-obinna-ulasi-082198413_techyjaunt-techyjaunt-dataanalytics-ugcPost-7492612876445315072-ZcRk/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGk2S2IBonLi7enVgV_4EWmKqN3SMKtPPDg
 
 ## Author
 
