@@ -44,22 +44,22 @@ This project analyzes a real, publicly available supply chain dataset to answer 
 Every column was checked before being trusted, not assumed clean because it came from a "real" dataset. The following actions were taken in Power Query:
 
 **Removed, zero analytical value:**
-- `Customer Password` and `Customer Email`, both held a single repeated placeholder value across all 180,519 rows
-- `Product Description`, entirely blank across every row
-- `Product Status`, a single unique value across the entire dataset
+- Customer Password and Customer Email, both held a single repeated placeholder value across all 180,519 rows
+- Product Description, entirely blank across every row
+- Product Status, a single unique value across the entire dataset
 
 **Removed, exact duplicates of a retained column:**
-- `Benefit per order` (identical to `Order Profit Per Order`)
-- `Category Id` (identical to `Product Category Id`)
-- `Product Card Id` (identical to `Order Item Cardprod Id`)
+- Benefit per order (identical to Order Profit Per Order)
+- Category Id (identical to Product Category Id)
+- Product Card Id (identical to Order Item Cardprod Id)
 
 **Removed, insufficient usable data:**
-- `Order Zipcode` (86% of rows missing)
-- `Customer Street` (over 7,400 unique values, too granular for meaningful analysis)
-- `Product Image` (file path field, not used in this analysis)
+- Order Zipcode (86% of rows missing)
+- Customer Street (over 7,400 unique values, too granular for meaningful analysis)
+- Product Image (file path field, not used in this analysis)
 
 **Retained despite appearing redundant at a glance:**
-- `Order City/Country/Region/State` and `Customer City/Country/State` were kept separately, they represent different things (where a customer is based versus where an order shipped to), not duplicate data.
+- Order City/Country/Region/State and Customer City/Country/State were kept separately, they represent different things (where a customer is based versus where an order shipped to), not duplicate data.
 
 ## Dashboard Pages
 
@@ -88,35 +88,35 @@ Visuals: Sales by Customer Segment, Top 10 and Bottom 10 Customers by Sales, Top
 ## Sample DAX Measures
 
 ```
-Total Sales = SUM('Table'[Order Item Total])
+Total Sales = SUM('Table[Order Item Total])
 
-Total Profit = SUM('Table'[Order Profit Per Order])
+Total Profit = SUM('Table[Order Profit Per Order])
 
 Profit Margin % =
 DIVIDE(
-    SUM('Table'[Order Profit Per Order]),
-    SUM('Table'[Order Item Total])
+    SUM('Table[Order Profit Per Order]),
+    SUM('Table[Order Item Total])
 )
 
 Total Orders = DISTINCTCOUNT('Table'[Order Id])
 
-Total Customers = DISTINCTCOUNT('Table'[Customer Id])
+Total Customers = DISTINCTCOUNT('Table[Customer Id])
 
 Average Order Value =
 DIVIDE(
-    SUM('Table'[Order Item Total]),
+    SUM(Table'[Order Item Total]),
     DISTINCTCOUNT('Table'[Order Id])
 )
 
 Late Delivery Rate =
 DIVIDE(
-    CALCULATE(COUNTROWS('Table'), 'Table'[Late_delivery_risk] = 1),
+    CALCULATE(COUNTROWS('Table), Table'[Late_delivery_risk] = 1),
     COUNTROWS('Table')
 )
 
 On-Time Delivery Rate (strict) =
 DIVIDE(
-    CALCULATE(COUNTROWS('Table'), 'Table'[Delivery Status] = "Shipping on time"),
+    CALCULATE(COUNTROWS('Table), 'Table'[Delivery Status] = "Shipping on time"),
     COUNTROWS('Table')
 )
 
