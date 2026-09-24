@@ -80,7 +80,7 @@ Visuals: Sales by Customer Segment, Top 10 and Bottom 10 Customers by Sales, Top
 - Total Sales reached 33.05M against Total Profit of 3.97M, a blended margin of roughly 12%.
 - The Consumer segment leads sales in every single market with no exceptions, a structural pattern rather than a regional one.
 - The single highest selling product (Field & Stream Sports, 0.76M) is not in the category generating the most profit. Fishing leads all categories in profit at 0.61M.
-- Late Delivery Rate stands at 54.83%, calculated from the dataset's own `Late_delivery_risk` flag. On-Time Delivery Rate, calculated strictly from `Delivery Status = "Shipping on time"` only, stands at 17.84%. A looser, complement-based definition would inflate that figure to roughly 45%, and was deliberately not used here.
+- Late Delivery Rate stands at 54.83%, calculated from the dataset's own Late_delivery_risk flag. On-Time Delivery Rate, calculated strictly from Delivery Status = "Shipping on time" only, stands at 17.84%. A looser, complement-based definition would inflate that figure to roughly 45%, and was deliberately not used here.
 - Average delivery delay sits near zero (0.57 days) despite the majority of orders technically qualifying as late, indicating the issue is distributional rather than reflected in the average.
 - One customer accounts for 11.7M in total sales, an order of magnitude above the next highest customer. This is flagged as requiring source-system verification rather than reported as a confirmed insight.
 - Cancellation Rate stands at 2.08% and Suspected Fraud rate at 2.26% of all orders.
